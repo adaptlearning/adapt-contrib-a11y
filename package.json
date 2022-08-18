@@ -1,0 +1,76 @@
+{
+  "bugs": {
+    "url": "https://github.com/adaptlearning/adapt-contrib-a11y/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Adapt Framework kernel. Responsible for boot loading, data loading and core APIs.",
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.5",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "conventional-changelog-eslint": "^3.0.9",
+    "semantic-release": "^19.0.3"
+  },
+  "framework": ">=5.20.2",
+  "homepage": "https://github.com/adaptlearning/adapt-contrib-a11y#readme",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPL-3.0",
+  "name": "adapt-contrib-a11y",
+  "main": "/js/adapt-contrib-a11y.js",
+  "displayName": "A11y",
+  "extension": "a11y",
+  "_targetAttribute": "_a11y",
+  "adapt_framework": {
+    "compilationMap": {
+      "core/js/a11y": "adapt-contrib-a11y/js/a11y",
+      "core/js/a11y/browserFocus": "adapt-contrib-a11y/js/BrowserFocus",
+      "core/js/a11y/deprecated": "adapt-contrib-a11y/js/deprecated",
+      "core/js/a11y/focusOptions": "adapt-contrib-a11y/js/FocusOptions",
+      "core/js/a11y/keyboardFocusOutline": "adapt-contrib-a11y/js/KeyboardFocusOutline",
+      "core/js/a11y/log": "adapt-contrib-a11y/js/Log",
+      "core/js/a11y/popup": "adapt-contrib-a11y/js/Popup",
+      "core/js/a11y/scroll": "adapt-contrib-a11y/js/Scroll",
+      "core/js/a11y/wrapFocus": "adapt-contrib-a11y/js/WrapFocus",
+      "core/js/enums/defaultAriaLevels": "adapt-contrib-a11y/js/DEFAULT_ARIA_LEVELS"
+    }
+  },
+  "private": true,
+  "release": {
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "eslint"
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "eslint"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json"
+          ],
+          "message": "Chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adaptlearning/adapt-contrib-a11y.git"
+  },
+  "version": "1.0.0"
+}
